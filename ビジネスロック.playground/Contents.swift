@@ -27,6 +27,18 @@ class TrafficLight {
     }
     
     @objc private func timerAction() {
+      count += 1
+
+      if signColor == .blue && count == 10 {
+          print(SignColor.blue)
+      }
+        else if signColor == .yellow && count == 2 {
+            print(SignColor.blue)
+        }else if signColor == .red && count == 10 {
+            print(SignColor.red)
+            timer?.invalidate()
+        }
+
     }
 }
 
