@@ -1,21 +1,34 @@
 import UIKit
+import Foundation
+import PlaygroundSupport
 
-struct SignColor{
-    var go: String
-    var stop: String
-    var goStop: String
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+enum SignColor: String {
+    case red = "Red"
+    case blue = "Blue"
+    case yellow = "Yellow"
 }
-let sign = SignColor(go: "blue",stop: "red",goStop: "yellow")
 
-print(sign.go)
-if sign.go == sign.go{
-    sleep(2)
-    print("押しボタンが押されました")
+class TrafficLight {
+    
+    private var signColor: SignColor = .red
+    private var timer: Timer?
+    private var count = 0
+
+    func start() {
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(timerAction),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    @objc private func timerAction() {
+    }
 }
-sleep(7)
-print(sign.goStop)
-sleep(4)
-print(sign.stop)
-sleep(8)
-print(sign.go)
 
+let trafficLight = TrafficLight()
+trafficLight.start()
