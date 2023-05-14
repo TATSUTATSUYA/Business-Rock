@@ -1,6 +1,5 @@
 import UIKit
 
-
 struct SignColor{
     var go: String
     var stop: String
@@ -19,6 +18,4 @@ sleep(4)
 print(sign.stop)
 sleep(8)
 print(sign.go)
-
-
 
